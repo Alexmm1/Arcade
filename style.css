@@ -1,0 +1,44 @@
+*{
+    box-sizing: border-box;
+  
+}
+
+.board{
+    display: flex;
+    flex-wrap: wrap;
+    height: 360px;
+    width: 360px;
+}
+
+.cell{
+    display: flex;
+    flex-basis: 120px;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+
+.cell:nth-child(3n+2){
+    border-left: 5px solid black;
+    border-right: 5px solid black;
+}
+
+
+.cell:nth-child(n+4), .class:nth-child(-n+6){
+    border-top: 5px solid black;
+}
+
+
+.game-restart, .player-name-button{
+    cursor: pointer;
+    border-radius: 15px;
+}
+
+.player-name{
+   margin: 5px;
+   display: flex;
+   flex: 1;
+   flex-flow: row;
+   align-items: center;
+}
