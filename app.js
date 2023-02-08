@@ -1,37 +1,36 @@
-// const 0 = document.getElementById('0')
-// const 1 = document.getElementById('1')
-// const 2 = document.getElementById('2')
-// const 3 = document.getElementById('3')
-// const 4 = document.getElementById('4')
-// const 5 = document.getElementById('5')
-// const 6 = document.getElementById('6')
-// const 7 = document.getElementById('7')
-// const 8 = document.getElementById('8')
-const board = document.getElementsByClassName('board')
-const restart = document.getElementsByClassName('game-restart')
-let state
-function buildInitialState() {
-    restart.addEventListener('click'); {
-
-    }
+let board = Array.from(document.getElementsByClassName('cell'))
+let restart = document.getElementsByClassName('game-restart')
+let spaces = Array(9).fill(null)
+let x_test = "X"
+let o_test = "O"
+let currentPlayer = x_test
+const winningCombo = [
+    [0,1,2],
+    [3,4,5],
+    [6,7,8],
+    [0,3,6],
+    [1,4,7],
+    [2,5,8],
+    [0,4,8],
+    [2,4,6],
+]
+console.log(spaces)
+const startGame = () => {
+    board.forEach(board => board.addEventListener('click', boardClick))
 }
-function renderState(){
-
+function boardClick(e) {
+    console.log(e.target)
+    // const id = e.target.id
+    // if(!spaces[id]){
+    //     spaces[id] = currentPlayer
+    //     e.target.innerText = currentPlayer
+    //     currentPlayer = currentPlayer == x_test ? o_test : x_test
+    // }
 }
+// function playerHasWon() {
+//     for (const condition of winningCombo) {
+//         let [a, b, c] = condition
+//     }
+// }
 
-function onBoardClick(){
-    renderState()
-}
-
-board.addEventListener('click', onBoardClick); {
-
-}
-
-const gameState = {
-    players: ['x','o'],
-    board: [
-        [null, null, null],
-        [null, null, null],
-        [null, null, null]
-    ]
-}
+startGame()
