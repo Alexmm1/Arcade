@@ -22,6 +22,8 @@ const playerName2Btn = document.getElementById('playerName2Btn')
 const startGame = () => {
     board.forEach(cell => cell.addEventListener('click', boardClick))
 }
+
+
 function boardClick(e) {
     const id = e.target.id
     if(!spaces[id]){
