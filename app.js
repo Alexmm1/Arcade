@@ -5,7 +5,6 @@ let x_test = "X"
 let o_test = "O"
 let currentPlayer = x_test
 let playerText = document.getElementById('playerText')
-let winnerText = document.getElementsByTagName('p')[0]
 let playerName = document.getElementById('player-title')
 let playerName2 = document.getElementById('player-title2')
 const winningCombo = [
@@ -29,9 +28,7 @@ function boardClick(e) {
         spaces[id] = currentPlayer
         e.target.innerText = currentPlayer
        currentPlayer =o_test
-    } else{
-        return currentPlayer
-    }
+    } 
 
     if(playerHasWon() !==false){
         playerText = `${currentPlayer} has won!`
@@ -42,6 +39,8 @@ function boardClick(e) {
 }
 
 restart.addEventListener('click', restartBtn)
+
+
 function restartBtn(){
     spaces.fill(null)
 
